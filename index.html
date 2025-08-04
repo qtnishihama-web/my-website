@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=240, initial-scale=1.0" charset="Shift_JIS"> <!-- ガラケーではShift_JISエンコーディングを使用することがある -->
+  <title>アンケートフォーム</title>
+  <style type="text/css">
+    /* ページ全体の設定 */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px; /* 基本の文字サイズ */
+      line-height: 1.6; /* 行間を少し広めに */
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+      text-align: left;
+    }
+
+    /* コンテンツの幅を画面サイズに合わせる */
+    #container {
+      width: 240px; /* ガラケーの横幅に固定 */
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    /* テキスト入力とテキストエリア */
+    input[type="text"],
+    textarea {
+      width: 90%; /* 横幅を画面幅の90%に設定 */
+      padding: 5px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: 1px solid #cccccc;
+    }
+
+    /* ボタン */
+    input[type="submit"],
+    textarea {
+      width: 90%; /* 横幅を画面幅の90%に設定 */
+      padding: 5px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: 1px solid #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>現場調査のみ完了連絡用</h1>
+  <form action="https://script.google.com/macros/s/AKfycbx0s9LYag4sTp7-zYA-NjmJIYimg6fMtk4BeaGQZYmUnTGjT7LP53wpgGJ795iDeXmjog/exec" method="post">
+    <p>
+      <label for="name">託送契約IDを入力してください<br>入力例：000012345671（半角数字、ハイフン不要）</label><br>
+      <input type="text" id="name" name="name">
+    </p>
+    <p>
+      <label>現場調査のみの理由を選択してください<br>計器不明などで九テクから指示内容があった場合はその他に指示内容を入力してください。</label><br>
+      <input type="radio" id="option1" name="choice" value="◆TEL必要◆　計器が焼損・溶融・変形している" required>
+      <label for="option1">◆TEL必要◆　計器が焼損・溶融・変形している</label><br>
+      
+      <input type="radio" id="option2" name="choice" value="◆TEL必要◆　ご自宅で電気が使えずお困り/公衆災害の恐れ有り">
+      <label for="option2">◆TEL必要◆　ご自宅で電気が使えずお困り/公衆災害の恐れ有り</label><br>
+      
+      <input type="radio" id="option3" name="choice" value="【NTS機能利用時のみ選択可能】 エコキュート設置されており、計器１次側電圧無し 又は 計器取り外しされた状態で現場にある">
+      <label for="option3">【NTS機能利用時のみ選択可能】 エコキュート設置されており、計器１次側電圧無し 又は 計器取り外しされた状態で現場にある</label><br>
+
+      <input type="radio" id="option3" name="choice" value="計器転倒している">
+      <label for="option3">計器転倒している</label><br>
+
+      <input type="radio" id="option3" name="choice" value="計器雨水侵入している">
+      <label for="option3">計器雨水侵入している</label><br>
+
+      <input type="radio" id="option3" name="choice" value="計器設置中だが１次側配線が取外しされている">
+      <label for="option3">計器設置中だが１次側配線が取外しされている</label><br>
+
+      <input type="radio" id="option3" name="choice" value="計器取外しされている ※無人で計器残置されている場合は◆TEL必要◆">
+      <label for="option3">計器取外しされている ※無人で計器残置されている場合は◆TEL必要◆</label><br>
+
+      <input type="radio" id="option3" name="choice" value="電圧正常だが計器液晶消灯している">
+      <label for="option3">電圧正常だが計器液晶消灯している</label><br>
+
+      <input type="radio" id="option3" name="choice" value="電圧異常で断線箇所が特定できた">
+      <label for="option3">電圧異常で断線箇所が特定できた</label><br>
+
+      <input type="radio" id="option3" name="choice" value="電圧異常だが断線箇所は特定できなかった">
+      <label for="option3">電圧異常だが断線箇所は特定できなかった</label><br>
+
+      <input type="radio" id="option3" name="choice" value="上記に当てはまらない">
+      <label for="option3">上記に当てはまらない</label><br>
+    </p>
+    <p>
+      <label for="name2">「上記に当てはまらない」場合もしくは「補足事項がある」場合は、内容を入力してください。</label><br>
+      <input type="text" id="name2" name="name2">
+    </p>
+    <p>
+      <label>お客さまはご在宅でしたか？</label><br>
+      <input type="radio" id="option1" name="choice2" value="ご不在／無人箇所" required>
+      <label for="option1">ご不在／無人箇所</label><br>
+      
+      <input type="radio" id="option2" name="choice2" value="ご在宅（お客さまよりお申出事項等あった場合には、別途電話報告願います。）">
+      <label for="option2">ご在宅（お客さまよりお申出事項等あった場合には、別途電話報告願います。）</label><br>
+    </p>
+    <p>
+      <label>引込柱の近くまで高所作業車は入っていけますか？</label><br>
+      <input type="radio" id="option1" name="choice3" value="問題なく入っていける" required>
+      <label for="option1">問題なく入っていける</label><br>
+      
+      <input type="radio" id="option2" name="choice3" value="道中で道が細くなっているため難しい（道幅2.2ｍ程度必要）">
+      <label for="option2">道中で道が細くなっているため難しい（道幅2.2ｍ程度必要）</label><br>
+    </p>
+    <p>
+      <label for="name3">【電圧異常時のみ】測定した電圧を入力ください<br>入力例：102Vの際は102、0Vの際は0と入力<br><br>1-2間（単二、単三、三相いずれも）</label><br>
+      <input type="text" id="name3" name="name3">
+    </p>
+    <p>
+      <label for="name4">2-3間（単三、三相のみ）</label><br>
+      <input type="text" id="name4" name="name4">
+    </p>
+    <p>
+      <label for="name5">1-3間（単三、三相のみ）</label><br>
+      <input type="text" id="name5" name="name5">
+    </p>
+    <p>
+      <label for="name6">【エコキュート設置／工事中時のみ】聞取りした工事店情報を入力ください<br>◆注意◆個人が特定される情報は記載しないでください！！<br>NG例：担当者やお客様の電話番号</label><br>
+      <input type="text" id="name6" name="name6">
+    </p>
+    <p>
+      <input type="submit" value="送信">
+    </p>
+  </form>
+</body>
+</html>
