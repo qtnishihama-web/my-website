@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
   <meta name="viewport" content="width=240, initial-scale=1.0">
   <title>現場調査のみ完了連絡用フォーム</title>
+  
   <style type="text/css">
     body {
       font-size: 20px;
@@ -32,10 +33,39 @@
       padding: 10px 20px;
     }
   </style>
+  <script type="text/javascript">
+  function validateForm() {
+    // フォームの入力チェックを行う関数
+  
+    var input = document.forms["myForm"]["name"].value;
+    // フォーム名「myForm」内の「name」という名前の入力欄の値を取得
+  
+    // 空チェック
+    if (input.length === 0) {
+      alert("託送契約IDを入力してください。");
+      return false;
+    }
+  
+    // 12文字以上であるかチェック
+    if (input.length < 12) {
+      alert("託送契約IDは12文字以上で入力してください。");
+      return false;
+    }
+  
+    // 半角数字のみかチェック（正規表現で数字だけか確認）
+    if (!/^\d+$/.test(input)) {
+      alert("託送契約IDは半角数字のみで入力してください。");
+      return false;
+    }
+  
+    // ここまで問題なければtrueを返してフォーム送信を許可
+    return true;
+  }
+  </script>
 </head>
 <body>
   <h1>現場調査のみ完了連絡用</h1>
-  <form action="https://script.google.com/macros/s/AKfycbzSrTb2ZFGDqrl5MwEsUTC-tf01oCbFSAk6JWHjRZMVl9jha3MvDVbyGCr5qFoNeCaZSg/exec" method="post">
+  <form name="myForm" form action="https://script.google.com/macros/s/AKfycbzSrTb2ZFGDqrl5MwEsUTC-tf01oCbFSAk6JWHjRZMVl9jha3MvDVbyGCr5qFoNeCaZSg/exec" method="post" onsubmit="return validateForm();">
     <p>
       <label for="name"><strong>・託送契約IDを入力してください</strong><br>入力例：000012345671<br>（半角数字、ハイフン不要）</label><br>
       <input type="text" id="name" name="name" minlength="12" maxlength="12" required>
