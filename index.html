@@ -32,10 +32,10 @@
       font-size: 20px;
       padding: 10px 20px;
     }
-    /* 送信ボタン直前のlabelだけ余白を設定 */
-    label.label-before-submit {
-      display: block;
+    /* 送信ボタンの前にあるinputにだけ余白（マージン）を付ける方法 */
+    input.space-before-submit {
       margin-bottom: 2em; /* 約2行分の余白 */
+      display: block; /* ブロック化して改行を強制（必要に応じて） */
     }
   </style>
   <script type="text/javascript">
@@ -155,7 +155,7 @@
     </p>
     <p>
       <label for="name6"><strong>・聞取りした工事会社情報を入力ください</strong><br>◆注意◆個人が特定される情報は記載しないでください！！<br>NG例：担当者やお客様の電話番号<br>入力例：A社工事グループ<br>092-xxx-xxxx<br>入力例：無人のためヒアリングできず</label><br>
-      <input type="text" class="label-before-submit" id="name6" name="name6">
+      <input type="text" id="name6" name="name6" class="space-before-submit">
     </p>
     <p>
       <input type="submit" value="送信">
