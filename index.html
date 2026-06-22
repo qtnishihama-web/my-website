@@ -33,7 +33,8 @@
       padding: 10px 20px;
     }
     /* 送信ボタンの前にあるinputにだけ余白（マージン）を付ける方法 */
-    input.space-before-submit {
+    space-before-submit {
+      font-size: 18px;
       margin-bottom: 4em; /* 約4行分の余白 */
       display: block; /* ブロック化して改行を強制（必要に応じて） */
     }
@@ -123,7 +124,8 @@
     </p>
     <p>
       <label for="name2"><strong>「上記に当てはまらない」場合もしくは「補足事項がある」場合のみ</strong><br>内容を入力してください。</label><br>
-      <input type="text" id="name2" name="name2">
+      <textarea id="name2" name="name2" class="space-before-submit" rows="6" cols="20"></textarea>
+      
     </p>
     <p>
       <label><strong>・お客さま在宅でしたか？</strong></label><br>
@@ -155,7 +157,7 @@
     </p>
     <p>
       <label for="name6"><strong>・聞取りした工事会社情報を入力ください</strong><br>◆注意◆個人が特定される情報は記載しないでください！！<br>NG例：担当者やお客様の電話番号<br>入力例：A社工事グループ<br>092-xxx-xxxx<br>入力例：無人のためヒアリングできず</label><br>
-      <textarea id="name6" name="name6" class="space-before-submit" rows="6" cols="40"></textarea>
+      <textarea id="name6" name="name6" class="space-before-submit" rows="6" cols="20"></textarea>
     </p>
     <p>
       <input type="submit" value="送信">
