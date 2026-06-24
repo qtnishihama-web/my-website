@@ -123,7 +123,7 @@
     </p>
     <p>
       <label for="name2"><strong>「上記に当てはまらない」場合もしくは「補足事項がある」場合のみ</strong><br>内容を入力してください。</label><br>
-      <input type="text" id="name2" name="name2">
+      <input type="text" id="name2" name="name2" onkeydown="if(event.key === 'Enter') showInput()">
     </p>
     <p>入力内容：<span id="output"></span></p>
     <p>
