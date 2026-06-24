@@ -124,8 +124,8 @@
     <p>
       <label for="name2"><strong>「上記に当てはまらない」場合もしくは「補足事項がある」場合のみ</strong><br>内容を入力してください。</label><br>
       <input type="text" id="name2" name="name2">
-      
     </p>
+    <p>入力内容：<span id="output"></span></p>
     <p>
       <label><strong>・お客さま在宅でしたか？</strong></label><br>
       <input type="radio" id="choice2_option1" name="choice2" value="ご不在／無人箇所" required>
@@ -162,5 +162,11 @@
       <input type="submit" value="送信">
     </p>
   </form>
+<script>
+  function showInput() {
+    const input = document.getElementById('name2').value;
+    document.getElementById('output').textContent = input;
+  }
+</script>
 </body>
 </html>
